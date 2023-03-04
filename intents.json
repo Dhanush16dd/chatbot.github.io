@@ -94,14 +94,6 @@
       "tag": "contact",
       "patterns": ["contact"],
       "responses": []
-    },
-    {
-      "facebook": "https://www.facebook.com/SPCET-StPeters-College-of-Engineering-and-Technology-150368582249643/",
-      "Twitter": "https://twitter.com/spcetchennai",
-      "Youtube": "https://www.youtube.com/channel/UCwXStNZWDMcIaCJccNTFsvA?view_as=subscriber",
-      "Instagram": "https://www.instagram.com/spcetchennai/",
-      "LinkedIn": "https://www.linkedin.com/company/st-peter-s-college-of-engineering-and-technology/",
-      "admission":"https://www.spcet.ac.in/admission-form/"
     }
 
 
