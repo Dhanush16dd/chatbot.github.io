@@ -29,6 +29,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+
+
+
 function output(input) {
   let product;
 
@@ -97,10 +100,11 @@ function addChat(input, product) {
   let botImg = document.createElement("img");
   let botText = document.createElement("span");
   botDiv.id = "bot";
+  botText.setAttribute("onclick", "move();");
   botImg.src = "bot-mini.png";
   botImg.className = "avatar";
   botDiv.className = "bot response";
-  botText.className = "messages__item messages__item--operator"
+  botText.className = "bot1 messages__item messages__item--operator"
   botText.innerText = "Typing...";
   botDiv.appendChild(botText);
   botDiv.appendChild(botImg);
