@@ -81,6 +81,7 @@ body {
 .chatbox__messages {
     margin-top: auto;
     display: flex;
+    gap: 10px;
     overflow-y: scroll;
     flex-direction: column;
 }
@@ -155,15 +156,17 @@ body {
 
 .messages__item--visitor,
 .messages__item--typing {
-    border-top-left-radius: 20px;
+    transform: translateY(200px);
+    border-bottom-left-radius: 20px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
 }
 
 .messages__item--operator {
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    margin-top: 30px;
     border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
     background: var(--primary);
     color: white;
 }
@@ -207,8 +210,6 @@ body {
     box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
     cursor: pointer;
 }
-
-
 
 /* New Changes End */
 
@@ -271,7 +272,8 @@ input {
 }
 
 .response {
-	display: flex;
+    margin-bottom: 300px;
+	display: block;
 	align-items: center;
 	margin: 1%;
 }

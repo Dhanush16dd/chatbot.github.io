@@ -7,10 +7,10 @@ let state = false;
 openButton.addEventListener('click', () => toggleState(chatBox))
 
 function toggleState(chatbox) {
-  state = !state;
+  state = !state;  
 
   // show or hides the box
-  if(state) {
+  if(state) { 
       chatbox.classList.add('chatbox--active')
   } else {
       chatbox.classList.remove('chatbox--active')
@@ -90,7 +90,7 @@ function addChat(input, product) {
   let userDiv = document.createElement("div");
   userDiv.id = "user";
   userDiv.className = "user response";
-  userDiv.innerHTML = `<img src="user.png" class="avatar"><span>${input}</span>`;
+  userDiv.innerHTML = `<img src="user.png" class="avatar"><span class="messages__item messages__item--visitor">${input}</span>`;
   messagesContainer.appendChild(userDiv);
 
   let botDiv = document.createElement("div");
@@ -100,6 +100,7 @@ function addChat(input, product) {
   botImg.src = "bot-mini.png";
   botImg.className = "avatar";
   botDiv.className = "bot response";
+  botText.className = "messages__item messages__item--operator"
   botText.innerText = "Typing...";
   botDiv.appendChild(botText);
   botDiv.appendChild(botImg);
@@ -115,3 +116,7 @@ function addChat(input, product) {
   )
 
 }
+
+// Including some new features
+
+
