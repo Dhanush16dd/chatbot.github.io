@@ -24,7 +24,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.code === "Enter") {
       let input = inputField.value;
       inputField.value = "";
-      output(input);
+      // output(input);
+      fetch('./intents.json')
+      .then(result=>result.json())
+      .then(data => showInfo(data,input));
     }
   });
 });
@@ -32,39 +35,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-function output(input) {
-  let product;
+// function output(input) {
+//   let product;
 
-  // Regex remove non word/space chars
-  // Trim trailing whitespce
-  // Remove digits - not sure if this is best
-  // But solves problem of entering something like 'hi1'
+//   // Regex remove non word/space chars
+//   // Trim trailing whitespce
+//   // Remove digits - not sure if this is best
+//   // But solves problem of entering something like 'hi1'
 
-  let text = input.toLowerCase().replace(/[^\w\s]/gi, "").replace(/[\d]/gi, "").trim();
-  text = text
-    .replace(/ a /g, " ")   // 'tell me a story' -> 'tell me story'
-    .replace(/i feel /g, "")
-    .replace(/whats/g, "what is")
-    .replace(/please /g, "")
-    .replace(/ please/g, "")
-    .replace(/r u/g, "are you");
+//   let text = input.toLowerCase().replace(/[^\w\s]/gi, "").replace(/[\d]/gi, "").trim();
+//   text = text
+//     .replace(/ a /g, " ")   // 'tell me a story' -> 'tell me story'
+//     .replace(/i feel /g, "")
+//     .replace(/whats/g, "what is")
+//     .replace(/please /g, "")
+//     .replace(/ please/g, "")
+//     .replace(/r u/g, "are you");
 
-  if (compare(prompts, replies, text)) { 
-    // Search for exact match in `prompts`
-    product = compare(prompts, replies, text);
-  } else if (text.match(/thank/gi)) {
-    product = "You're welcome!"
-  } else if (text.match(/(corona|covid|virus)/gi)) {
-    // If no match, check if message contains `coronavirus`
-    product = coronavirus[Math.floor(Math.random() * coronavirus.length)];
-  } else {
-    // If all else fails: random alternative
-    product = alternative[Math.floor(Math.random() * alternative.length)];
-  }
+//   if (compare(prompts, replies, text)) { 
+//     // Search for exact match in `prompts`
+//     product = compare(prompts, replies, text);
+//   } else if (text.match(/thank/gi)) {
+//     product = "You're welcome!"
+//   } else if (text.match(/(corona|covid|virus)/gi)) {
+//     // If no match, check if message contains `coronavirus`
+//     product = coronavirus[Math.floor(Math.random() * coronavirus.length)];
+//   } else {
+//     // If all else fails: random alternative
+//     product = alternative[Math.floor(Math.random() * alternative.length)];
+//   }
 
-  // Update DOM
-  addChat(input, product);
-}
+//   // Update DOM
+//   addChat(input, product);
+// }
 
 function compare(promptsArray, repliesArray, string) {
   let reply;
@@ -100,7 +103,7 @@ function addChat(input, product) {
   let botImg = document.createElement("img");
   let botText = document.createElement("span");
   botDiv.id = "bot";
-  botText.setAttribute("onclick", "move();");
+  // botText.setAttribute("onclick", "move();");
   botImg.src = "bot-mini.png";
   botImg.className = "avatar";
   botDiv.className = "bot response";
@@ -123,20 +126,17 @@ function addChat(input, product) {
 
 // Connecting to json server
 
-fetch('./intents.json')
-.then(result=>result.json())
-.then(data => showInfo(data));
-
-function showInfo(data){
-console.log(data)
+function showInfo(data,input){
+console.log(data,input)
 
 for(let i= 0 ;i < data.intents.length; i++){
 
-  let product = compareRandom(data.intents[i].tag,data.intents[i].patterns,data.intents[i].responses,"social media");
+  let product = compareRandom(data.intents[i].tag,data.intents[i].patterns,data.intents[i].responses,input);
   // console.log(data.intents[i].patterns)
   // console.log(data.intents[i].responses)
   if (product) {
   console.log(product)
+  addChat(input, product);
   console.log(data.intents[i].tag)
   }
 
