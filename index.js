@@ -99,26 +99,43 @@ function addChat(input, product) {
   userDiv.innerHTML = `<img src="user.png" class="avatar"><span class="messages__item messages__item--visitor">${input}</span>`;
   messagesContainer.appendChild(userDiv);
 
-  let botDiv = document.createElement("div");
-  let botImg = document.createElement("img");
-  let botText = document.createElement("span");
-  botDiv.id = "bot";
-  // botText.setAttribute("onclick", "move();");
-  botImg.src = "bot-mini.png";
-  botImg.className = "avatar";
-  botDiv.className = "bot response";
-  botText.className = "bot1 messages__item messages__item--operator"
-  botText.innerText = "Typing...";
-  botDiv.appendChild(botText);
-  botDiv.appendChild(botImg);
-  messagesContainer.appendChild(botDiv);
+//  bot message creation 
+
+let botDiv = document.createElement("div");
+let botText = document.createElement("span");
+botDiv.id = "bot";
+// botText.setAttribute("onclick", "move();");
+botDiv.className = "bot response";
+botText.className = "botText messages__item messages__item--operator"
+botText.innerText = "Typing...";
+botDiv.appendChild(botText);
+messagesContainer.appendChild(botDiv);
+
+
+
+
   // Keep messages at most recent
   messagesContainer.scrollTop = messagesContainer.scrollHeight - messagesContainer.clientHeight;
 
   // Fake delay to seem "real"
   setTimeout(() => {
+    if(typeof(product)==="object"){
+      console.log("Hey this is Object")
+      botText.innerText = " ";
+      for(let i = 0;i<product.length;i++){
+        let div1 = document.createElement('span');
+        div1.className = "messages__item messages__item--operator"
+        div1.append(product[i])
+        botText.append(div1)
+      }
+      
+      
+      
+    }else{
+      console.log("Hey this is not Object")
     botText.innerText = `${product}`;
     textToSpeech(product)
+  }
   }, 2000
   )
 
@@ -135,9 +152,11 @@ for(let i= 0 ;i < data.intents.length; i++){
   // console.log(data.intents[i].patterns)
   // console.log(data.intents[i].responses)
   if (product) {
-  console.log(product)
+  console.log(typeof(product))
   addChat(input, product);
   console.log(data.intents[i].tag)
+  }else{
+
   }
 
 }
@@ -154,7 +173,6 @@ function compareRandom(tag,promptsArray, repliesArray, string) {
       // console.log(promptsArray[x])
       if (promptsArray[x] === string) {
         let replies = repliesArray[Math.floor(Math.random() * repliesArray.length)];
-        let tag = repliesArray[Math.floor(Math.random() * repliesArray.length)];
         reply = replies;
         // console.log(reply);
         replyFound = true;
@@ -175,7 +193,8 @@ function compareRandom(tag,promptsArray, repliesArray, string) {
       // console.log(promptsArray[x])
       if (promptsArray[x] === string) {
         let replies = repliesArray;
-        reply = replies;
+        
+        reply = repliesArray;
         // console.log(reply);
         replyFound = true;
         // Stop inner loop when input value matches prompts

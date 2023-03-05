@@ -262,6 +262,11 @@ input {
 	margin-left: auto;
 }
 
+.botText {
+    display: flex;
+    flex-direction: column;
+}
+
 .bot {
 	font-family: Consolas, 'Courier New', Menlo, source-code-pro, Monaco,  
 	monospace;
@@ -290,4 +295,113 @@ input {
 		width: 75vw;
 		margin: 10vw;
 	}
+}
+
+
+
+/* menu */
+
+#menu {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    left: 20%;
+    top: 50%;
+    margin: -75px 0 0 -75px;
+    list-style: none;
+    font-size: 200%;
+}
+
+.menu-button {
+    opacity: 0;
+    z-index: -1;
+}
+
+.menu-button {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 65%;
+    top: 80%;
+    margin: -75px 0 0 -75px;
+    border-radius: 50%;
+    background: #fefefe;
+    background-size: 100%;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+#menu:not(:target)>a:first-of-type,
+#menu:target>a:last-of-type {
+    opacity: 1;
+    z-index: 1;
+}
+
+#menu:not(:target)>.icon-plus:before,
+#menu:target>.icon-minus:before {
+    opacity: 1;
+}
+
+.menu-item {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 55%;
+    line-height: 5px;
+    top: 70%;
+    margin: -50px 0 0 -50px;
+    border-radius: 50%;
+    background-color: #9C1DE7;
+    transform: translate(0px, 0px);
+    transition: transform 500ms;
+    z-index: -2;
+    transition: .5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-item:hover{
+opacity: 0.5;
+  box-shadow: 0 5px 10px black; 
+}
+
+
+.menu-item a {
+    color: #fff;
+    position: relative;
+    top: 30%;
+    left: 0;
+    text-decoration: none;
+}
+
+#menu:target>.menu-item:nth-child(6) {
+    transform: rotate(60deg) translateY(-100px) rotate(300deg);
+    transition-delay: 0s;
+}
+
+#menu:target>.menu-item:nth-child(5) {
+    transform: rotate(20deg) translateY(-105px) rotate(-20deg);
+    transition-delay: 0.1s;
+}
+
+#menu:target>.menu-item:nth-child(3) {
+    transform: rotate(-20deg) translateY(-105px) rotate(20deg);
+    transition-delay: 0.2s;
+}
+
+#menu:target>.menu-item:nth-child(4) {
+    transform: rotate(-60deg) translateY(-100px) rotate(60deg);
+    transition-delay: 0.3s;
+}
+
+.icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sicon{
+   position: absolute;
+   margin-bottom: 21px;
 }
