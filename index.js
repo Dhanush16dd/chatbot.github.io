@@ -17,17 +17,34 @@ function toggleState(chatbox) {
   }
 }
 
+sendButton.addEventListener('click', () => onSendButton())
+
+function onSendButton() {
+  const inputField = document.getElementById("input");
+  let input = inputField.value;
+  inputField.value = "";
+  if (input === "") {
+    return;
+}
+
+fetch('./intents.json')
+.then(result=>result.json())
+.then(data => showInfo(data,input));
+}
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const inputField = document.getElementById("input");
   inputField.addEventListener("keydown", (e) => {
+    let input = inputField.value;
     if (e.code === "Enter") {
-      let input = inputField.value;
+      if(input != ""){
+       
       inputField.value = "";
-      // output(input);
       fetch('./intents.json')
       .then(result=>result.json())
       .then(data => showInfo(data,input));
+      }
     }
   });
 });
@@ -35,39 +52,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-// function output(input) {
-//   let product;
+function output(input) {
+  let product;
 
-//   // Regex remove non word/space chars
-//   // Trim trailing whitespce
-//   // Remove digits - not sure if this is best
-//   // But solves problem of entering something like 'hi1'
+  // Regex remove non word/space chars
+  // Trim trailing whitespce
+  // Remove digits - not sure if this is best
+  // But solves problem of entering something like 'hi1'
 
-//   let text = input.toLowerCase().replace(/[^\w\s]/gi, "").replace(/[\d]/gi, "").trim();
-//   text = text
-//     .replace(/ a /g, " ")   // 'tell me a story' -> 'tell me story'
-//     .replace(/i feel /g, "")
-//     .replace(/whats/g, "what is")
-//     .replace(/please /g, "")
-//     .replace(/ please/g, "")
-//     .replace(/r u/g, "are you");
+  let text = input.toLowerCase().replace(/[^\w\s]/gi, "").replace(/[\d]/gi, "").trim();
+  text = text
+    .replace(/ a /g, " ")   // 'tell me a story' -> 'tell me story'
+    .replace(/i feel /g, "")
+    .replace(/whats/g, "what is")
+    .replace(/please /g, "")
+    .replace(/ please/g, "")
+    .replace(/r u/g, "are you");
 
-//   if (compare(prompts, replies, text)) { 
-//     // Search for exact match in `prompts`
-//     product = compare(prompts, replies, text);
-//   } else if (text.match(/thank/gi)) {
-//     product = "You're welcome!"
-//   } else if (text.match(/(corona|covid|virus)/gi)) {
-//     // If no match, check if message contains `coronavirus`
-//     product = coronavirus[Math.floor(Math.random() * coronavirus.length)];
-//   } else {
-//     // If all else fails: random alternative
-//     product = alternative[Math.floor(Math.random() * alternative.length)];
-//   }
+  if (compare(prompts, replies, text)) { 
+    // Search for exact match in `prompts`
+    product = compare(prompts, replies, text);
+  } else if (text.match(/thank/gi)) {
+    product = "You're welcome!"
+  } else if (text.match(/(corona|covid|virus)/gi)) {
+    // If no match, check if message contains `coronavirus`
+    product = coronavirus[Math.floor(Math.random() * coronavirus.length)];
+  } else {
+    // If all else fails: random alternative
+    product = alternative[Math.floor(Math.random() * alternative.length)];
+  }
 
-//   // Update DOM
-//   addChat(input, product);
-// }
+  // Update DOM
+  addChat(input, product);
+}
 
 function compare(promptsArray, repliesArray, string) {
   let reply;
@@ -96,85 +113,130 @@ function addChat(input, product) {
   let userDiv = document.createElement("div");
   userDiv.id = "user";
   userDiv.className = "user response";
-  userDiv.innerHTML = `<img src="user.png" class="avatar"><span class="messages__item messages__item--visitor">${input}</span>`;
+  userDiv.innerHTML = `<div class="messages__item messages__item--visitor">${input}</div>`;
   messagesContainer.appendChild(userDiv);
 
-//  bot message creation 
-
-let botDiv = document.createElement("div");
-let botText = document.createElement("span");
-botDiv.id = "bot";
-// botText.setAttribute("onclick", "move();");
-botDiv.className = "bot response";
-botText.className = "botText messages__item messages__item--operator"
-botText.innerText = "Typing...";
-botDiv.appendChild(botText);
-messagesContainer.appendChild(botDiv);
-
-
-
-
+  let botDiv = document.createElement("div");
+  let botText = document.createElement("div");
+  botDiv.id = "bot";
+  botText.setAttribute("onclick", "move();");
+  botDiv.className = "bot response";
+  botText.className = "bot1 messages__item messages__item--operator"
+  botText.innerText = "Typing...";
+  botDiv.appendChild(botText);
+  messagesContainer.appendChild(botDiv);
   // Keep messages at most recent
   messagesContainer.scrollTop = messagesContainer.scrollHeight - messagesContainer.clientHeight;
 
   // Fake delay to seem "real"
   setTimeout(() => {
-    if(typeof(product)==="object"){
-      console.log("Hey this is Object")
-      botText.innerText = " ";
-      for(let i = 0;i<product.length;i++){
-        let div1 = document.createElement('span');
-        div1.className = "messages__item messages__item--operator"
-        div1.append(product[i])
-        botText.append(div1)
-      }
-      
-      
-      
-    }else{
-      console.log("Hey this is not Object")
     botText.innerText = `${product}`;
     textToSpeech(product)
-  }
   }, 2000
   )
 
 }
 
-// Connecting to json server
+function addChatList(input,product){
+  const messagesContainer = document.getElementById("messages");
+
+  let userDiv = document.createElement("div");
+  userDiv.id = "user";
+  userDiv.className = "user response";
+  userDiv.innerHTML = `<div class="messages__item messages__item--visitor">${input}</div>`;
+  messagesContainer.appendChild(userDiv);
+
+  let botDiv = document.createElement("div");
+  let botText = document.createElement("div");
+  botDiv.id = "bot";
+  // botText
+  botDiv.className = "bot response";
+  botText.className = "bot1 messages__item messages__item--operator"
+  botText.innerText = "Typing...";
+  botDiv.appendChild(botText);
+  messagesContainer.appendChild(botDiv);
+  let textUl = document.createElement("ul")
+  textUl.id = "list"
+  // Keep messages at most recent
+  messagesContainer.scrollTop = messagesContainer.scrollHeight - messagesContainer.clientHeight;
+
+  // Fake delay to seem "real"
+  setTimeout(() => {
+    botText.innerText = "";
+    product.forEach(ele => {
+      let textDiv = document.createElement("li");
+      
+      textDiv.innerText = ele;
+      textUl.append(textDiv);
+      // botText.innerText = `<div>${product}</div>`;
+    textToSpeech(ele)
+    });
+    botText.append(textUl);
+    pickItem();
+  }, 1000
+  )
+  
+
+  function pickItem(){
+    var items = document.querySelectorAll("#list li"),
+    tab = [], index;
+    console.log(items)
+
+// add values to the array
+for(var i = 0; i < items.length; i++){
+tab.push(items[i].innerHTML);
+}
+
+// get selected element index
+for(var i = 0; i < items.length; i++)
+{
+items[i].onclick = function(){
+   
+   index = tab.indexOf(this.innerHTML);
+   console.log(this.innerHTML + " Index = " + index);
+   console.log(this.innerHTML)
+   fetch('./intents.json')
+      .then(result=>result.json())
+      .then(data => showInfo(data,this.innerHTML));
+
+
+};
+}
+}
+}
+
+// Including some new features
+
+fetch('./intents.json')
+.then(result=>result.json())
+.then(data => showInfo(data));
 
 function showInfo(data,input){
-console.log(data,input)
 
 for(let i= 0 ;i < data.intents.length; i++){
 
   let product = compareRandom(data.intents[i].tag,data.intents[i].patterns,data.intents[i].responses,input);
-  // console.log(data.intents[i].patterns)
-  // console.log(data.intents[i].responses)
   if (product) {
-  console.log(typeof(product))
-  addChat(input, product);
+  console.log(product)
+  
   console.log(data.intents[i].tag)
-  }else{
-
   }
 
 }
 
 }
 
-// test for compare request and responses
 function compareRandom(tag,promptsArray, repliesArray, string) {
-  if (["funny","emotions","name","faq","thanks","goodbye","greeting"].includes(tag)) {
+  if (tag === "single") {
     let reply;
     let replyFound = false;
     for (let x = 0; x < promptsArray.length; x++) {
-      // console.log(x)
-      // console.log(promptsArray[x])
       if (promptsArray[x] === string) {
         let replies = repliesArray[Math.floor(Math.random() * repliesArray.length)];
+        let tag = repliesArray[Math.floor(Math.random() * repliesArray.length)];
         reply = replies;
-        // console.log(reply);
+        console.log(reply)
+        addChat(string, reply);
         replyFound = true;
         // Stop inner loop when input value matches prompts
         break;
@@ -184,18 +246,16 @@ function compareRandom(tag,promptsArray, repliesArray, string) {
         break;
       }
     }
-    return reply;
-  }else{
+    
+  }else if(tag === "all"){
     let reply;
     let replyFound = false;
     for (let x = 0; x < promptsArray.length; x++) {
-      // console.log(x)
-      // console.log(promptsArray[x])
       if (promptsArray[x] === string) {
         let replies = repliesArray;
-        
-        reply = repliesArray;
-        // console.log(reply);
+        reply = replies;
+        addChatList(string,reply)
+        console.log(reply);
         replyFound = true;
         // Stop inner loop when input value matches prompts
         break;
@@ -203,11 +263,11 @@ function compareRandom(tag,promptsArray, repliesArray, string) {
       if (replyFound) {
         // Stop outer loop when reply is found instead of interating through the entire array
         break;
+      }else{
+        console.log("this the last hope")
       }
     }
-    return reply;
   }
     
   }
-
 

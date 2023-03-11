@@ -26,7 +26,6 @@
                     <div></div>
                 </div>
                 <div class="chatbox__footer">
-                    <input id="input" type="text" placeholder="Say something..." autocomplete="off" autofocus="true" />
                     <ul id="menu">
                         <a class="menu-button icon icon-plus" href="#menu" title="Show navigation"><img width="30px" src="./images/links.svg" /></span></a>
                         <a class="menu-button icon icon-minus" href="#0" title="Hide navigation"><img width="30px" src="./images/links.svg" /></span></a>
@@ -55,6 +54,8 @@
                             </a>
                         </li>
                     </ul>
+                    <input id="input" type="text" placeholder="Say something..." autocomplete="off" autofocus="true" />
+                    <button class="chatbox__send--footer send__button">Send</button>
                 </div>
             </div>
             <div class="chatbox__button">
@@ -62,6 +63,31 @@
             </div>
         </div>
 	</div>
+    <script>
+            
+        function pickItem(){
+            var items = document.querySelectorAll("#list li"),
+            tab = [], index;
+            console.log(items)
+    
+    // add values to the array
+    for(var i = 0; i < items.length; i++){
+       tab.push(items[i].innerHTML);
+     }
+    
+    // get selected element index
+    for(var i = 0; i < items.length; i++)
+    {
+        items[i].onclick = function(){
+           
+           index = tab.indexOf(this.innerHTML);
+           console.log(this.innerHTML + " Index = " + index);
+    
+        };
+    }
+        }
+        
+    </script>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

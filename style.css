@@ -27,6 +27,26 @@ body {
 
 /* New Changes Start */
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    font-size: 100%;
+    background: #F1F1F1;
+}
+
+*, html {
+    --primaryGradient: linear-gradient(93.12deg, #581B98 0.52%, #9C1DE7 100%);
+    --secondaryGradient: linear-gradient(268.91deg, #581B98 -2.14%, #9C1DE7 99.69%);
+    --primaryBoxShadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    --secondaryBoxShadow: 0px -10px 15px rgba(0, 0, 0, 0.1);
+    --primary: #581B98;
+}
 
 /* CHATBOX
 =============== */
@@ -81,9 +101,8 @@ body {
 .chatbox__messages {
     margin-top: auto;
     display: flex;
-    gap: 10px;
     overflow-y: scroll;
-    flex-direction: column;
+    flex-direction:column;
 }
 
 .messages__item {
@@ -93,11 +112,11 @@ body {
 }
 
 .messages__item--operator {
-    margin-left: auto;
+    margin-right: auto;
 }
 
 .messages__item--visitor {
-    margin-right: auto;
+    margin-left: auto;
 }
 
 /* FOOTER */
@@ -151,21 +170,19 @@ body {
     margin-top: 10px;
     background: #E0E0E0;
     padding: 8px 12px;
-    max-width: 70%;
+    max-width: 80%;
 }
 
 .messages__item--visitor,
 .messages__item--typing {
-    transform: translateY(200px);
-    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
 
 .messages__item--operator {
-    margin-top: 30px;
-    border-bottom-left-radius: 20px;
     border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     background: var(--primary);
     color: white;
@@ -176,8 +193,8 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    padding: 20px 20px;
+    justify-content:end;
+    padding: 20px 10px;
     background: var(--secondaryGradient);
     box-shadow: var(--secondaryBoxShadow);
     border-bottom-right-radius: 10px;
@@ -186,7 +203,7 @@ body {
 }
 
 .chatbox__footer input {
-    width: 80%;
+    width: 67%;
     border: none;
     padding: 10px 10px;
     border-radius: 30px;
@@ -211,78 +228,14 @@ body {
     cursor: pointer;
 }
 
+
 /* New Changes End */
 
-span {
-	padding-right: 15px;
-	padding-left: 15px;
+.bot li{
+    padding: 5px;
+    cursor: pointer;
+    text-decoration: dashed;
 }
-
-.container {
-	display: flex;
-  justify-content: center;
-	align-items: center;
-	width: 100%;
-	height: 100%;
-}
-
-.chat {
-	height: 300px;
-	width: 50vw;
-	display: flex;
-	flex-direction: column;
-  justify-content: center;
-	align-items: center;
-} 
-
-::-webkit-input-placeholder { 
-	color: .711 
-}
- 
-input { 
-	border: 0; 
-	padding: 15px; 
-	margin-left: auto;
-	border-radius: 10px; 
-}
-
-.messages {
-	display: flex;
-	flex-direction: column;
-	overflow: scroll;
-	height: 90%;
-	width: 100%;
-	background-color: white;
-	padding: 15px;
-	margin: 15px;
-	border-radius: 10px;
-}
-
-#bot {
-	margin-left: auto;
-}
-
-.botText {
-    display: flex;
-    flex-direction: column;
-}
-
-.bot {
-	font-family: Consolas, 'Courier New', Menlo, source-code-pro, Monaco,  
-	monospace;
-}
-
-.avatar {
-	height: 25px;
-}
-
-.response {
-    margin-bottom: 300px;
-	display: block;
-	align-items: center;
-	margin: 1%;
-}
-
 
 /* Mobile */
 
@@ -305,7 +258,7 @@ input {
     width: 150px;
     height: 150px;
     position: absolute;
-    left: 20%;
+   left: 20%;
     top: 50%;
     margin: -75px 0 0 -75px;
     list-style: none;
@@ -339,7 +292,7 @@ input {
 
 #menu:not(:target)>.icon-plus:before,
 #menu:target>.icon-minus:before {
-    opacity: 1;
+    opacity: 0;
 }
 
 .menu-item {
@@ -359,6 +312,7 @@ input {
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 100;
 }
 
 .menu-item:hover{
@@ -378,6 +332,7 @@ opacity: 0.5;
 #menu:target>.menu-item:nth-child(6) {
     transform: rotate(60deg) translateY(-100px) rotate(300deg);
     transition-delay: 0s;
+    opacity: 100;
 }
 
 #menu:target>.menu-item:nth-child(5) {
