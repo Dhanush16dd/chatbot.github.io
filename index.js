@@ -119,7 +119,6 @@ function addChat(input, product) {
   let botDiv = document.createElement("div");
   let botText = document.createElement("div");
   botDiv.id = "bot";
-  botText.setAttribute("onclick", "move();");
   botDiv.className = "bot response";
   botText.className = "bot1 messages__item messages__item--operator"
   botText.innerText = "Typing...";
@@ -132,7 +131,7 @@ function addChat(input, product) {
   setTimeout(() => {
     botText.innerText = `${product}`;
     textToSpeech(product)
-  }, 2000
+  }, 1000
   )
 
 }
@@ -207,9 +206,7 @@ items[i].onclick = function(){
 
 // Including some new features
 
-fetch('./intents.json')
-.then(result=>result.json())
-.then(data => showInfo(data));
+
 
 function showInfo(data,input){
 
@@ -227,34 +224,45 @@ for(let i= 0 ;i < data.intents.length; i++){
 }
 
 function compareRandom(tag,promptsArray, repliesArray, string) {
-  if (tag === "single") {
+   
+  let text = string.toLowerCase().replace(/[^\w\s]/gi, "").replace(/[\d]/gi, "").trim();
+  text = text
+  .replace(/ a /g, " ")   // 'tell me a story' -> 'tell me story'
+  .replace(/i feel /g, "")
+  .replace(/whats/g, "what is")
+  .replace(/please /g, "")
+  .replace(/ please/g, "")
+  .replace(/r u/g, "are you");
+
+if (tag == "single") {
     let reply;
     let replyFound = false;
     for (let x = 0; x < promptsArray.length; x++) {
-      if (promptsArray[x] === string) {
+      if (promptsArray[x] === text) {
         let replies = repliesArray[Math.floor(Math.random() * repliesArray.length)];
         let tag = repliesArray[Math.floor(Math.random() * repliesArray.length)];
         reply = replies;
         console.log(reply)
-        addChat(string, reply);
+        addChat(text, reply);
         replyFound = true;
         // Stop inner loop when input value matches prompts
         break;
       }
       if (replyFound) {
+        
         // Stop outer loop when reply is found instead of interating through the entire array
         break;
       }
     }
-    
-  }else if(tag === "all"){
+    text = "";
+  }else if(tag == "all"){
     let reply;
     let replyFound = false;
     for (let x = 0; x < promptsArray.length; x++) {
-      if (promptsArray[x] === string) {
+      if (promptsArray[x] === text) {
         let replies = repliesArray;
         reply = replies;
-        addChatList(string,reply)
+        addChatList(text,reply)
         console.log(reply);
         replyFound = true;
         // Stop inner loop when input value matches prompts
@@ -263,10 +271,20 @@ function compareRandom(tag,promptsArray, repliesArray, string) {
       if (replyFound) {
         // Stop outer loop when reply is found instead of interating through the entire array
         break;
-      }else{
-        console.log("this the last hope")
       }
-    }
+    }return null
+  }else{
+    const alternative = [
+      "Same",
+      "Go on...",
+      "Bro...",
+      "Try again",
+      "I'm listening...",
+      "I don't understand :/"
+    ]
+    let replies = alternative[Math.floor(Math.random() * alternative.length)];
+    console.log(replies)
+    addChat(text, replies)
   }
     
   }
