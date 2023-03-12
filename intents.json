@@ -12,7 +12,7 @@
     },
     {
       "tag": "single",
-      "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
+      "patterns": ["thanks", "thank you", "that's helpful", "thank's a lot!"],
       "responses": ["Happy to help!", "Any time!", "My pleasure"]
     },
     {
@@ -24,9 +24,9 @@
     },
     {
       "tag": "single",
-      "patterns":   [ "your name please","your name","may i know your name","what is your name","what call yourself","i love you"],
+      "patterns":   [ "your name please","your name","may i know your name","what is your name","what call yourself"],
 
-      "responses":   ["I am nameless", "I don't have a name","I love you too", "Me too"]
+      "responses":   ["I am sam", "sam here"]
 
     },
     {
@@ -39,9 +39,9 @@
     {
       "tag": "single",
       "patterns": [
-        "Tell me a joke!",
-        "Tell me something funny!",
-        "Do you know a joke?"
+        "tell me a joke!",
+        "tell me something funny!",
+        "to you know a joke?"
       ],
       "responses": [
         "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
@@ -51,7 +51,7 @@
 
     {
       "tag": "all",
-      "patterns": ["programmes offered"],
+      "patterns": ["programmes offered","course"],
       "responses": ["Under graduate","post graduate"]
     },
     {
@@ -61,7 +61,17 @@
     },
     {
       "tag": "all",
-      "patterns": ["Under graduate"],
+      "patterns": ["others"],
+      "responses": ["scholarship","course"," strength","time tabel","opportunities"]
+    },
+    {
+      "tag": "all",
+      "patterns": ["time tabel"],
+      "responses": ["<a href='docs/1ST YR.xlsx'>First Year</a>","<a href='docs/TIMETABLE - 2ND YR.xlsx'>Second Year</a>"," <a href='docs/3rd year.xlsx'>Third Year</a>","<a href='docs/4TH YEAR.xlsx'>Final Year</a>"]
+    },
+    {
+      "tag": "all",
+      "patterns": ["under graduate"],
       "responses": ["Aeronautical engineering", "Mechanical engineering", "Bio technology", "Computer science engineering", "Electronics and communication engineering", "Chemical engineering", "Electrical and electronics engineering", "Information technology"]
     },
     {
@@ -77,12 +87,37 @@
     {
       "tag": "all",
       "patterns": ["facilities"],
-      "responses": ["library", "transport", "hostel", "health center", "bank", "lab", "canteen"]
+      "responses": ["<a href='https://www.spcet.ac.in/library/'>library</a>", "<a href='https://www.spcet.ac.in/transport/'>transport</a>", "hostel", "health center", "bank", "lab", "canteen"]
+    },
+    {
+      "tag": "all",
+      "patterns": ["hostel"],
+      "responses": ["<p>Separate hostels are available for boys and girls with 164 and 156 rooms respectively with the total building area of 17,000 sq.m.</p><p>Rooms are available for single, double, triple and quadruple accommodation with attached bathrooms</p><p>Clean and hygienic dining halls are maintained throughout.</p>"]
+    },
+    {
+      "tag": "all",
+      "patterns": ["health center"],
+      "responses": ["A primary health center is operating for preliminary treatment to sick students in our campus. The Health center possesses enough drugs,<span id='dots'>........</span><span id='more' style='display:none'> beds and other medication facilities for needy persons. An ambulance is always ready at student’s service.Medical Facilities available in the Campus.Free Medicines are provided to sick students.College ambulance is in availabiltiy for 24×7</span><button onclick='showFull()' id='myBtn'>Read more</button>"]
+    },
+    {
+      "tag": "all",
+      "patterns": ["bank"],
+      "responses": ["A branch of Indian Bank is functioning in our campus with two ATMs . The students, faculty and staff make use of this facility for their financial transactions."]
+    },
+    {
+      "tag": "all",
+      "patterns": ["lab"],
+      "responses": ["Wifi enabled laboratories with 100+ systems."]
+    },
+    {
+      "tag": "all",
+      "patterns": ["canteen"],
+      "responses": [" self-service restaurant in which customers select various dishes from an open-counter display."]
     },
     {
       "tag": "all",
       "patterns": ["about","about institute"],
-      "responses": ["St.Peter’s College of Engineering and Technology, a co-educational college was established by Lakshmi Saraswathi Educational Trust in the year 2008. The college aims to impart training to students to develop their Intellectual powers, identify and cultivate interest and talents, and train them to become responsible and eminent citizens of india. The institution is spread over a sprawling campus with its calm surrounding, creating a study atmosphere. The invigorative and serene milieu of the institution is conducive for higher education."	
+      "responses": ["St.Peter’s College of Engineering and Technology, a co-educational college was established by<span id='dots'>........</span><span id='more' style='display:none'> Lakshmi Saraswathi Educational Trust in the year 2008. The college aims to impart training to students to develop their Intellectual powers, identify and cultivate interest and talents, and train them to become responsible and eminent citizens of india. The institution is spread over a sprawling campus with its calm surrounding, creating a study atmosphere. The invigorative and serene milieu of the institution is conducive for higher education.view more <a href='https://www.spcet.ac.in/administration/'>Click Here</a></span><button onclick='showFull()' id='myBtn'>Read more</button>"	
     ]
     },
     {
@@ -92,9 +127,77 @@
     },
     {
       "tag": "all",
+      "patterns": ["opportunities","placement"],
+      "responses": ["At St.Peter's, Placement time is not a mere annual ritual it is a time for<span id='dots'>........</span><span id='more' style='display:none'> showcasing the very best in our young engineers to the industrial world. The Placement & Training Cell functions with the primary aim of placing students in top-notch companies even before they have depleted their courses.250 Multinational Companies from sectors visited our Campus for Placements. Students of SEC are placed through Campus Placements throughout the globe. We are increasing the list every year. Some of our REPUTED Recruiters are Capgemini, IBM, Infosys. Tata Consultancy Services, BYJU's, IDBI Bank, Mindtree. Zoho, Hyundai, L&T. TVS. Jaro Education, and Many More.</span><button onclick='showFull()' id='myBtn'>Read more</button>"]
+    },
+    {
+      "tag": "all",
       "patterns": ["social media"],
       "responses": ["Facebook", "Twitter", "Youtube", "Instagram", "LinkedIn"]
     },
+    {
+      "tag": "all",
+      "patterns": ["email"],
+      "responses": ["principal@spcet.ac.in","spcetadmission@gmail.com"]
+    },
+    {
+      "tag": "all",
+      "patterns": ["phone number"],
+      "responses": ["9791043355","4426558091"]
+    },
+    {
+      "tag": "all",
+      "patterns": ["address"],
+      "responses": ["St. Peter's College of Engineering and Technology, Avadi, Chennai, Tamil Nadu , India, Pin Code - 600 054."]
+    },
+    {
+      "tag": "all",
+      "patterns": ["facebook"],
+      "responses": ["<i class='fa fa-facebook' aria-hidden='true'></i><a href='https://www.facebook.com/SPCET-StPeters-College-of-Engineering-and-Technology-150368582249643/'>facebook</a>"]
+    },
+    {
+      "tag": "all",
+      "patterns": ["twitter"],
+      "responses": ["<i class='fa fa-twitter' aria-hidden='true'></i><a href='https://twitter.com/spcetchennai'>Twitter</a>"]
+    },
+    {
+      "tag": "all",
+      "patterns": ["youtube"],
+      "responses": ["<i class='fa fa-youtube-play' aria-hidden='true'></i><a href='https://www.youtube.com/channel/UCwXStNZWDMcIaCJccNTFsvA?view_as=subscriber'>YouTube</a>"]
+    },
+    {
+      "tag": "all",
+      "patterns": ["instagram"],
+      "responses": ["<i class='fa fa-instagram' aria-hidden='true'></i><a href='https://www.instagram.com/spcetchennai/'>Instagram</a>"]
+    },
+    {
+      "tag": "all",
+      "patterns": ["linkedin"],
+      "responses": ["<i class='fa fa-linkedin' aria-hidden='true'></i><a href='https://www.linkedin.com/company/st-peter-s-college-of-engineering-and-technology/'>LinkedIn</a>"]
+    },
+    {
+      "tag": "all",
+      "patterns": ["apply now"],
+      "responses": ["<a href='https://www.spcet.ac.in/admission-form/'>apply now</a>"]
+    },
+    {
+      "tag": "all",
+      "patterns": ["admission"],
+      "responses": ["contact","apply now"]
+    },
+    {
+      "tag": "all",
+      "patterns": ["scholarship"],
+      "responses": ["For scholarship check here <a href='https://scholarships.gov.in/'>scholarship</a>"]
+    },
+    {
+      "tag": "all",
+      "patterns": ["see on map"],
+      "responses": ["<i class='fa fa-map-marker' aria-hidden='true'></i><a href='https://www.google.com/maps/dir//St.Peter's+College+of+Engineering+and+Technology,+Avadi,+Tamil+Nadu+600054,+India/@13.094805,80.0897,10z/data=!4m9!4m8!1m0!1m5!1m1!1s0x3a526267d82f23ef:0xe1971dd1b2483c0c!2m2!1d80.1184577!2d13.1106658!3e0?hl=en-US'>see on map</a>"]
+    }
+    ,
+    
+
     {
       "tag": "alter",
       "patterns": [""],

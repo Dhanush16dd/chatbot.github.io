@@ -3,6 +3,7 @@ const openButton= document.querySelector('.chatbox__button');
 const chatBox= document.querySelector('.chatbox__support');
 const sendButton= document.querySelector('.send__button');
 let state = false;
+pickItem();
 
 openButton.addEventListener('click', () => toggleState(chatBox))
 
@@ -49,7 +50,32 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+function pickItem(){
+  var items = document.querySelectorAll("#list li"),
+  tab = [], index;
+  console.log(items)
 
+// add values to the array
+for(var i = 0; i < items.length; i++){
+tab.push(items[i].innerHTML);
+}
+
+// get selected element index
+for(var i = 0; i < items.length; i++)
+{
+items[i].onclick = function(){
+ 
+ index = tab.indexOf(this.innerHTML);
+ console.log(this.innerHTML + " Index = " + index);
+ console.log(this.innerHTML)
+ fetch('./intents.json')
+    .then(result=>result.json())
+    .then(data => showInfo(data,this.innerHTML));
+
+
+};
+}
+}
 
 
 function output(input) {
@@ -165,7 +191,7 @@ function addChatList(input,product){
     product.forEach(ele => {
       let textDiv = document.createElement("li");
       
-      textDiv.innerText = ele;
+      textDiv.innerHTML = ele;
       textUl.append(textDiv);
       // botText.innerText = `<div>${product}</div>`;
     textToSpeech(ele)
@@ -273,19 +299,22 @@ if (tag == "single") {
         break;
       }
     }return null
-  }else{
-    const alternative = [
-      "Same",
-      "Go on...",
-      "Bro...",
-      "Try again",
-      "I'm listening...",
-      "I don't understand :/"
-    ]
-    let replies = alternative[Math.floor(Math.random() * alternative.length)];
-    console.log(replies)
-    addChat(text, replies)
-  }
+   }//else{
+  //   const alternative = [
+  //     "Same",
+  //     "Go on...",
+  //     "Bro...",
+  //     "Try again",
+  //     "I'm listening...",
+  //     "I don't understand :/"
+  //   ]
+  //   let replies = alternative[Math.floor(Math.random() * alternative.length)];
+  //   console.log(replies)
+  //   addChat(text, replies)
+  // }
     
   }
 
+
+  // function for get started
+ 

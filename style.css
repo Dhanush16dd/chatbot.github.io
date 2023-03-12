@@ -119,6 +119,9 @@ body {
     margin-left: auto;
 }
 
+
+
+
 /* FOOTER */
 .chatbox__footer {
     position: sticky;
@@ -359,4 +362,43 @@ opacity: 0.5;
 .sicon{
    position: absolute;
    margin-bottom: 21px;
+}
+
+/* toggle show more */
+
+#myBtn{
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+/* starting guide */
+
+.messages-guide {
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: auto;
+    width: 250px;
+}
+.start_g{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0;
+}
+
+.start_guide{
+    padding: 5px 13px;
+    margin-top: 10px;
+    border:#581B98 solid 2px;
+    font-weight: 500;
+    color: #581B98;
+
+}
+.start_guide:hover{
+    color: white;
+    background-color: #581B98;
 }

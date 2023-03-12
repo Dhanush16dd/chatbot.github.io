@@ -1,54 +1,11 @@
-
-    
-<!DOCTYPE html>
+<!doctype html>
 <html>
-    <head>
-        <title>Javascript: get selected LI index</title>
-        <meta charset="windows-1252">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
+  <head>
+    <!-- Place your kit's code here -->
+    <script src="https://kit.fontawesome.com/dd65c54b9c.js" crossorigin="anonymous"></script>
+  </head>
 
-        <div class="chatbox__messages" id="messages">
-            <div></div>
-        <div id="user" class="user response"><div class="messages__item messages__item--visitor">hi</div></div><div id="bot" class="bot response"><div onclick="move();" class="bot1 messages__item messages__item--operator">Howdy</div></div><div id="user" class="user response"><div class="messages__item messages__item--visitor">help</div></div><div id="bot" class="bot response"><div class="bot1 messages__item messages__item--operator"><ul id="list"><li>contact</li><li>course</li><li>facilities</li><li>about</li></ul></div></div></div>
-        
-        <ul onclick="pickItem();" id="list">
-            <li>JS</li>
-            <li>PHP</li>
-            <li>Java</li>
-            <li>C#</li>
-            <li>c++</li>
-            <li>HTML</li>
-            <li>CSS</li>
-        </ul>
-        
-        
-        <script>
-            
-            function pickItem(){
-                var items = document.querySelectorAll("#list li"),
-                tab = [], index;
-                console.log(items)
-        
-        // add values to the array
-        for(var i = 0; i < items.length; i++){
-           tab.push(items[i].innerHTML);
-         }
-        
-        // get selected element index
-        for(var i = 0; i < items.length; i++)
-        {
-            items[i].onclick = function(){
-               
-               index = tab.indexOf(this.innerHTML);
-               console.log(this.innerHTML + " Index = " + index);
-        
-            };
-        }
-            }
-            
-        </script>
-        
-    </body>
+  <body>
+    <i class="fas fa-thumbs-up fa-5x"></i>
+  </body>
 </html>
