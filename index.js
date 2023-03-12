@@ -258,19 +258,7 @@ if (tag == "single") {
         break;
       }
     }return reply
-   }//else{
-  //   const alternative = [
-  //     "Same",
-  //     "Go on...",
-  //     "Bro...",
-  //     "Try again",
-  //     "I'm listening...",
-  //     "I don't understand :/"
-  //   ]
-  //   let replies = alternative[Math.floor(Math.random() * alternative.length)];
-  //   console.log(replies)
-  //   addChat(text, replies)
-  // }
+   }
     
   }
 
