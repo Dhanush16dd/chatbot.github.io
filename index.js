@@ -192,6 +192,20 @@ for(let i= 0 ;i < data.intents.length; i++){
 
 }
 console.log(key)
+if (key !="seccuss") {
+  console.log("adfadsfasdfadsf")
+  const alternative = [
+    "Same",
+    "Go on...",
+    "Bro...",
+    "Try again",
+    "I'm listening...",
+    "I don't understand :/"
+  ]
+  let replies = alternative[Math.floor(Math.random() * alternative.length)];
+  console.log(replies)
+  addChat(input, replies)
+}
 }
 
 function compareRandom(tag,promptsArray, repliesArray, string) {
@@ -244,7 +258,19 @@ if (tag == "single") {
         break;
       }
     }return reply
-   }
+   }//else{
+  //   const alternative = [
+  //     "Same",
+  //     "Go on...",
+  //     "Bro...",
+  //     "Try again",
+  //     "I'm listening...",
+  //     "I don't understand :/"
+  //   ]
+  //   let replies = alternative[Math.floor(Math.random() * alternative.length)];
+  //   console.log(replies)
+  //   addChat(text, replies)
+  // }
     
   }
 
