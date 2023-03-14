@@ -5,28 +5,14 @@
 	<title>Chatbot</title>
 	<link rel="icon" href="bot.png" />
 	<link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
-    <style>
-        a{
-            color: white;
-        }
-        i{
-            margin-right: 10px;
-        }
-        ul{
-            padding: 0;
-            margin: 0;
-        }
-        li{
-            list-style: none;
-        }
-      
-    </style>
 </head>
 
 <body>
     <i class="fa fa-map-marker" aria-hidden="true"></i>
+    
 	<div id="container" class="container">
 
 
@@ -37,8 +23,8 @@
                         <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-5--v1.png" alt="image">
                     </div>
                     <div class="chatbox__content--header">
-                        <h4 class="chatbox__heading--header">Chat support</h4>
-                        <p class="chatbox__description--header">Hello! How can I assist you today?     </p>
+                        <h4 class="chatbox__heading--header" >Chat support</h4>
+                        <p class="chatbox__description--header">Hello! How can I assist you today?</p>
                     </div>
                 </div>
                 <div class="chatbox__messages" id="messages">
@@ -54,8 +40,9 @@
                           <li class="start_guide bg-transprant rounded-pill" onclick="pickItem();">others</li>
                         </ul>
                     </div>
-
+                    <i class="bi bi-play-circle-fill" onclick="speechStop();"></i>
                 </div>
+                
                 <div class="chatbox__footer">
                     <ul id="menu">
                         <a class="menu-button icon icon-plus" href="#menu" title="Show navigation"><img width="30px" src="./images/links.svg" /></span></a>

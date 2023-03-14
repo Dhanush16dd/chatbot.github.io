@@ -100,7 +100,7 @@ function addChat(input, product) {
 
   // Fake delay to seem "real"
   setTimeout(() => {
-    botText.innerText = `${product}`;
+    botText.innerHTML = `${product}`;
     textToSpeech(product)
   }, 1000
   )

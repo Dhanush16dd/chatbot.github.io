@@ -90,43 +90,43 @@
       "responses": ["<a href='https://www.spcet.ac.in/library/'>library</a>", "<a href='https://www.spcet.ac.in/transport/'>transport</a>", "hostel", "health center", "bank", "lab", "canteen"]
     },
     {
-      "tag": "all",
+      "tag": "single",
       "patterns": ["hostel"],
       "responses": ["<p>Separate hostels are available for boys and girls with 164 and 156 rooms respectively with the total building area of 17,000 sq.m.</p><p>Rooms are available for single, double, triple and quadruple accommodation with attached bathrooms</p><p>Clean and hygienic dining halls are maintained throughout.</p>"]
     },
     {
-      "tag": "all",
+      "tag": "single",
       "patterns": ["health center"],
       "responses": ["A primary health center is operating for preliminary treatment to sick students in our campus. The Health center possesses enough drugs,<span id='dots'>........</span><span id='more' style='display:none'> beds and other medication facilities for needy persons. An ambulance is always ready at student’s service.Medical Facilities available in the Campus.Free Medicines are provided to sick students.College ambulance is in availabiltiy for 24×7</span><button onclick='showFull()' id='myBtn'>Read more</button>"]
     },
     {
-      "tag": "all",
+      "tag": "single",
       "patterns": ["bank"],
       "responses": ["A branch of Indian Bank is functioning in our campus with two ATMs . The students, faculty and staff make use of this facility for their financial transactions."]
     },
     {
-      "tag": "all",
+      "tag": "single",
       "patterns": ["lab"],
       "responses": ["Wifi enabled laboratories with 100+ systems."]
     },
     {
-      "tag": "all",
+      "tag": "single",
       "patterns": ["canteen"],
       "responses": [" self-service restaurant in which customers select various dishes from an open-counter display."]
     },
     {
-      "tag": "all",
+      "tag": "single",
       "patterns": ["about","about institute"],
       "responses": ["St.Peter’s College of Engineering and Technology, a co-educational college was established by<span id='dots'>........</span><span id='more' style='display:none'> Lakshmi Saraswathi Educational Trust in the year 2008. The college aims to impart training to students to develop their Intellectual powers, identify and cultivate interest and talents, and train them to become responsible and eminent citizens of india. The institution is spread over a sprawling campus with its calm surrounding, creating a study atmosphere. The invigorative and serene milieu of the institution is conducive for higher education.view more <a href='https://www.spcet.ac.in/administration/'>Click Here</a></span><button onclick='showFull()' id='myBtn'>Read more</button>"	
     ]
     },
     {
-      "tag": "all",
+      "tag": "single",
       "patterns": ["strength"],
       "responses": ["There are nearly 700 students enrolled in full time courses and more than 80 teaching and non teaching staff"]
     },
     {
-      "tag": "all",
+      "tag": "single",
       "patterns": ["opportunities","placement"],
       "responses": ["At St.Peter's, Placement time is not a mere annual ritual it is a time for<span id='dots'>........</span><span id='more' style='display:none'> showcasing the very best in our young engineers to the industrial world. The Placement & Training Cell functions with the primary aim of placing students in top-notch companies even before they have depleted their courses.250 Multinational Companies from sectors visited our Campus for Placements. Students of SEC are placed through Campus Placements throughout the globe. We are increasing the list every year. Some of our REPUTED Recruiters are Capgemini, IBM, Infosys. Tata Consultancy Services, BYJU's, IDBI Bank, Mindtree. Zoho, Hyundai, L&T. TVS. Jaro Education, and Many More.</span><button onclick='showFull()' id='myBtn'>Read more</button>"]
     },
@@ -138,17 +138,17 @@
     {
       "tag": "all",
       "patterns": ["email"],
-      "responses": ["principal@spcet.ac.in","spcetadmission@gmail.com"]
+      "responses": ["<i class='fa fa-envelope-o' aria-hidden='true'></i>principal@spcet.ac.in","<i class='fa fa-envelope-o' aria-hidden='true'></i>spcetadmission@gmail.com"]
     },
     {
       "tag": "all",
       "patterns": ["phone number"],
-      "responses": ["9791043355","4426558091"]
+      "responses": ["<i class='fa fa-phone' aria-hidden='true'></i>9791043355","<i class='fa fa-phone' aria-hidden='true'></i>4426558091"]
     },
     {
       "tag": "all",
       "patterns": ["address"],
-      "responses": ["St. Peter's College of Engineering and Technology, Avadi, Chennai, Tamil Nadu , India, Pin Code - 600 054."]
+      "responses": ["<i class='fa fa-area-chart' aria-hidden='true'></i>St. Peter's College of Engineering and Technology, Avadi, Chennai, Tamil Nadu , India, Pin Code - 600 054."]
     },
     {
       "tag": "all",
