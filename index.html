@@ -29,6 +29,9 @@
                 </div>
                 <div class="chatbox__messages" id="messages">
                     <div class="bot1 messages__item messages__item--operator">Hi. My name is Sam. How can I help you?</div>
+                    
+                </div>
+                <div class="guide">
                     <div class="bot1 messages-guide">
                         <ul class="start_g" id="list">
                            
@@ -38,11 +41,12 @@
                           <li class="start_guide bg-transprant rounded-pill" onclick="pickItem();">admission</li>
                           <li class="start_guide bg-transprant rounded-pill" onclick="pickItem();">help</li>
                           <li class="start_guide bg-transprant rounded-pill" onclick="pickItem();">others</li>
+                          
                         </ul>
+                        <li><i class="bi bi-play-circle-fill bill" onclick="speechStop();"></i></li>
+
                     </div>
-                    <i class="bi bi-play-circle-fill" onclick="speechStop();"></i>
                 </div>
-                
                 <div class="chatbox__footer">
                     <ul id="menu">
                         <a class="menu-button icon icon-plus" href="#menu" title="Show navigation"><img width="30px" src="./images/links.svg" /></span></a>
