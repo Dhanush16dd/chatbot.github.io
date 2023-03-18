@@ -115,6 +115,7 @@ body {
 
 /* MESSAGES */
 .chatbox__messages {
+    height: 1000px;
     margin-top: auto;
     display: flex;
     overflow-y: scroll;
@@ -218,6 +219,10 @@ body {
     box-shadow: var(--secondaryBoxShadow);
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
+<<<<<<< HEAD
+=======
+    margin-top: 0;
+>>>>>>> b74fda0cbe37d9122be0197d2ab00287e3527bfd
 }
 
 .chatbox__footer input {
@@ -393,9 +398,16 @@ opacity: 0.5;
 
 .messages-guide {
     display: flex;
+<<<<<<< HEAD
     padding: 0 12px;
     align-items: center;
 
+=======
+    margin-left: auto;
+    padding: 0 12px;
+    flex-direction: row;
+    align-items: center;
+>>>>>>> b74fda0cbe37d9122be0197d2ab00287e3527bfd
 }
 .start_g{
     display: flex;
@@ -417,14 +429,26 @@ opacity: 0.5;
     background-color: #581B98;
 }
 
+
+
 /* chat bot pass button */
 
 .bi-play-circle-fill{
+<<<<<<< HEAD
+=======
+    /* position: absolute; */
+    /* margin-left: auto; */
+    /* bottom: 20%; */
+    /* right: 10%; */
+>>>>>>> b74fda0cbe37d9122be0197d2ab00287e3527bfd
     font-size: 30px;
     color: #581B98;
 }
 
+<<<<<<< HEAD
 
 .chatbox__help{
     
 }
+=======
+>>>>>>> b74fda0cbe37d9122be0197d2ab00287e3527bfd
