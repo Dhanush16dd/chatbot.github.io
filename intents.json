@@ -97,7 +97,7 @@
     {
       "tag": "single",
       "patterns": ["health center"],
-      "responses": ["A primary health center is operating for preliminary treatment to sick students in our campus. The Health center possesses enough drugs,<span id='dots'>........</span><span id='more' style='display:none'> beds and other medication facilities for needy persons. An ambulance is always ready at student’s service.Medical Facilities available in the Campus.Free Medicines are provided to sick students.College ambulance is in availabiltiy for 24×7</span><button onclick='showFull()' id='myBtn'>Read more</button>"]
+      "responses": ["<p>A primary health center is operating for preliminary treatment to sick students in our campus. The Health center possesses enough drugs,<span class='dots'>........</span><span class='more' style='display:none'> beds and other medication facilities for needy persons. An ambulance is always ready at student’s service.Medical Facilities available in the Campus.Free Medicines are provided to sick students.College ambulance is in availabiltiy for 24×7</span><button id='read-btn' onclick='showFull(this)'>Read more</button></p>"]
     },
     {
       "tag": "single",
@@ -117,7 +117,7 @@
     {
       "tag": "single",
       "patterns": ["about","about institute"],
-      "responses": ["St.Peter’s College of Engineering and Technology, a co-educational college was established by<span id='dots'>........</span><span id='more' style='display:none'> Lakshmi Saraswathi Educational Trust in the year 2008. The college aims to impart training to students to develop their Intellectual powers, identify and cultivate interest and talents, and train them to become responsible and eminent citizens of india. The institution is spread over a sprawling campus with its calm surrounding, creating a study atmosphere. The invigorative and serene milieu of the institution is conducive for higher education.view more <a href='https://www.spcet.ac.in/administration/'>Click Here</a></span><button onclick='showFull()' id='myBtn'>Read more</button>"	
+      "responses": ["<p>St.Peter’s College of Engineering and Technology, a co-educational college was established by <span class='dots'>........</span><span class='more' style='display:none'>Lakshmi Saraswathi Educational Trust in the year 2008. The college aims to impart training to students to develop their intellectual powers, identify and cultivate interests and talents, and train them to become responsible and eminent citizens of India. The institution is spread over a sprawling campus with its calm surroundings, creating a study atmosphere. The invigorating and serene milieu of the institution is conducive for higher education. <a href='https://www.spcet.ac.in/administration/'>Click Here</a> to learn more.</span><button id='read-btn' onclick='showFull(this)'>Read more</button></p>"	
     ]
     },
     {
@@ -128,7 +128,7 @@
     {
       "tag": "single",
       "patterns": ["opportunities","placement"],
-      "responses": ["At St.Peter's, Placement time is not a mere annual ritual it is a time for<span id='dots'>........</span><span id='more' style='display:none'> showcasing the very best in our young engineers to the industrial world. The Placement & Training Cell functions with the primary aim of placing students in top-notch companies even before they have depleted their courses.250 Multinational Companies from sectors visited our Campus for Placements. Students of SEC are placed through Campus Placements throughout the globe. We are increasing the list every year. Some of our REPUTED Recruiters are Capgemini, IBM, Infosys. Tata Consultancy Services, BYJU's, IDBI Bank, Mindtree. Zoho, Hyundai, L&T. TVS. Jaro Education, and Many More.</span><button onclick='showFull()' id='myBtn'>Read more</button>"]
+      "responses": ["<p>At St.Peter's, Placement time is not a mere annual ritual it is a time for<span class='dots'>........</span><span class='more' style='display:none'> showcasing the very best in our young engineers to the industrial world. The Placement & Training Cell functions with the primary aim of placing students in top-notch companies even before they have depleted their courses.250 Multinational Companies from sectors visited our Campus for Placements. Students of SEC are placed through Campus Placements throughout the globe. We are increasing the list every year. Some of our REPUTED Recruiters are Capgemini, IBM, Infosys. Tata Consultancy Services, BYJU's, IDBI Bank, Mindtree. Zoho, Hyundai, L&T. TVS. Jaro Education, and Many More.</span><button id='read-btn' onclick='showFull(this)'>Read more</button></p>"]
     },
     {
       "tag": "all",
